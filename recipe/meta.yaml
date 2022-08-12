@@ -1,5 +1,5 @@
 {% set name = "napari-cellseg3d" %}
-{% set version = "0.0.1rc2" %}
+{% set version = "0.0.1rc3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-cellseg3d-{{ version }}.tar.gz
-  sha256: 8133dd23d1828b81ff2f8e7f3a98ef00d9c36b309620663721f45b127ad79185
+  sha256: d0616dd9f804de98647e8b04e086c2de67e43d6132cc8e20eb929231956a8dea
 
 build:
   noarch: python
@@ -24,6 +24,7 @@ requirements:
     - dask-image >=0.6.0
     - imageio-ffmpeg >=0.4.5
     - itk >=5.2.0
+    - magicgui
     - matplotlib-base >=3.4.1
     - monai >=0.8.1
     - napari >=0.4.14
@@ -31,11 +32,13 @@ requirements:
     - numpy
     - opencv >=4.5.5
     - pillow
-    - qtpy
+    - pims
     - python >=3.8
+    - pytorch >=1.11
+    - qtpy
     - scikit-image >=0.19.2
     - tifffile >=2022.2.9
-    - pytorch >=1.11
+    - tqdm
     - vispy >=0.9.6
 
 test:
