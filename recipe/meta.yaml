@@ -69,7 +69,7 @@ test:
     - napari_cellseg3d.utils
   commands:
     - pip list
-    # - pip check  # This can be uncommented on the next release when requirements are updated
+    - pip check
   requires:
     - pip
 
