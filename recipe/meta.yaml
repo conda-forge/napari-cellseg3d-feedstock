@@ -1,5 +1,5 @@
 {% set name = "napari-cellseg3d" %}
-{% set version = "0.0.1rc4" %}
+{% set version = "0.0.2rc1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/napari-cellseg3d-{{ version }}.tar.gz
-  sha256: ec77dd1dbd4e53cc18f4c22ea3e0a2659dee35427cc51a5d85035f7d5e9414b0
+  sha256: 9db957c564234d08a18d13b001199d45c7a0d15f01f550a43429e7abb74d1efd
 
 build:
   noarch: python
