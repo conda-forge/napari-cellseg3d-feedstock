@@ -46,8 +46,6 @@ test:
   imports:
     - napari_cellseg3d
     - napari_cellseg3d.res
-    - napari_cellseg3d.conftest
-    - napari_cellseg3d.drafts
     - napari_cellseg3d.plugins
     - napari_cellseg3d.utils
     - napari_cellseg3d.interface
