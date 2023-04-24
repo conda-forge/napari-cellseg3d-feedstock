@@ -52,7 +52,6 @@ test:
     - napari_cellseg3d.code_plugins.plugin_base
     - napari_cellseg3d.code_plugins.plugin_convert
     - napari_cellseg3d.code_plugins.plugin_crop
-    - napari_cellseg3d.code_plugins.plugin_dock
     - napari_cellseg3d.code_plugins.plugin_helper
     - napari_cellseg3d.code_plugins.plugin_metrics
     - napari_cellseg3d.code_plugins.plugin_model_inference
