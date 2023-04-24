@@ -21,6 +21,7 @@ requirements:
     - pip
     - python >=3.8
   run:
+    - dask-image >=0.6.0
     - einops
     - imageio-ffmpeg >=0.4.5
     - magicgui
