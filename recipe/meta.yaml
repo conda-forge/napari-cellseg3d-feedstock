@@ -20,7 +20,8 @@ requirements:
   host:
     - pip
     - python >=3.8
-    - pyqt
+    # - pyqt
+    - pyqt5-sip
   run:
     # - dask-image >=0.6.0
     - einops
