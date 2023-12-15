@@ -20,27 +20,29 @@ requirements:
   host:
     - pip
     - python >=3.8
+    - pyqt
   run:
-    - dask-image >=0.6.0
+    # - dask-image >=0.6.0
     - einops
-    - imageio-ffmpeg >=0.4.5
+    # - imageio-ffmpeg >=0.4.5
     - itk >=5.2.0
     - magicgui
     - matplotlib-base >=3.4.1
     - monai >=0.9.0
     - napari >=0.4.14
-    - nibabel
+    # - nibabel
     - numpy
-    - opencv >=4.5.5
-    - pillow
-    - pims
+    # - opencv >=4.5.5
+    # - pillow
+    # - pims
     - python >=3.8
     - pytorch >=1.11
     - qtpy
+    - pyclesperanto-prototype
     - scikit-image >=0.19.2
     - tifffile >=2022.2.9
     - tqdm
-    - vispy >=0.9.6
+    # - vispy >=0.9.6
 
 test:
   imports:
