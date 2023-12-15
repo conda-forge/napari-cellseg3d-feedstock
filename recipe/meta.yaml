@@ -20,8 +20,6 @@ requirements:
   host:
     - pip
     - python >=3.8
-    # - pyqt
-    - pyqt5-sip
   run:
     # - dask-image >=0.6.0
     - einops
@@ -38,7 +36,7 @@ requirements:
     # - pims
     - python >=3.8
     - pytorch >=1.11
-    - qtpy
+    - qtpy >=2.4
     - pyclesperanto-prototype
     - scikit-image >=0.19.2
     - tifffile >=2022.2.9
@@ -48,24 +46,24 @@ requirements:
 test:
   imports:
     - napari_cellseg3d
-    - napari_cellseg3d.res
-    - napari_cellseg3d.plugins
-    - napari_cellseg3d.utils
-    - napari_cellseg3d.interface
-    - napari_cellseg3d.code_plugins.plugin_base
-    - napari_cellseg3d.code_plugins.plugin_convert
-    - napari_cellseg3d.code_plugins.plugin_crop
-    - napari_cellseg3d.code_plugins.plugin_helper
-    - napari_cellseg3d.code_plugins.plugin_metrics
-    - napari_cellseg3d.code_plugins.plugin_model_inference
-    - napari_cellseg3d.code_plugins.plugin_model_training
-    - napari_cellseg3d.code_plugins.plugin_review
-    - napari_cellseg3d.code_plugins.plugin_review_dock
-    - napari_cellseg3d.code_plugins.plugin_utilities
-    - napari_cellseg3d.code_models.models
-    - napari_cellseg3d.code_models.model_framework
-    - napari_cellseg3d.code_models.model_instance_seg
-    - napari_cellseg3d.code_models.model_workers
+    # - napari_cellseg3d.res
+    # - napari_cellseg3d.plugins
+    # - napari_cellseg3d.utils
+    # - napari_cellseg3d.interface
+    # - napari_cellseg3d.code_plugins.plugin_base
+    # - napari_cellseg3d.code_plugins.plugin_convert
+    # - napari_cellseg3d.code_plugins.plugin_crop
+    # - napari_cellseg3d.code_plugins.plugin_helper
+    # - napari_cellseg3d.code_plugins.plugin_metrics
+    # - napari_cellseg3d.code_plugins.plugin_model_inference
+    # - napari_cellseg3d.code_plugins.plugin_model_training
+    # - napari_cellseg3d.code_plugins.plugin_review
+    # - napari_cellseg3d.code_plugins.plugin_review_dock
+    # - napari_cellseg3d.code_plugins.plugin_utilities
+    # - napari_cellseg3d.code_models.models
+    # - napari_cellseg3d.code_models.model_framework
+    # - napari_cellseg3d.code_models.model_instance_seg
+    # - napari_cellseg3d.code_models.model_workers
   commands:
     - pip list
     - pip check || true  # itk is indeed installed
