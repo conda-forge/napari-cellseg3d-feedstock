@@ -1,5 +1,6 @@
 {% set name = "napari-cellseg3d" %}
 {% set version = "0.2.4" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -11,68 +12,52 @@ source:
 
 build:
   noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
   number: 0
+  script: {{ PYTHON }} -m pip install . --no-deps --no-build-isolation -vv
   script_env:
     - QT_QPA_PLATFORM=offscreen
 
 requirements:
   host:
+    - python {{ python_min }}
     - pip
-    - python >=3.8
+    - setuptools >=64
+    - setuptools-scm >=8
+    - wheel
+
   run:
-    # - dask-image >=0.6.0
-    - einops
-    # - imageio-ffmpeg >=0.4.5
-    - itk >=5.2.0
-    - magicgui
+    - python >={{ python_min }}
+    - imagecodecs >=2023.3.16
+    - itk
     - matplotlib-base >=3.4.1
-    - monai >=0.9.0
+    - monai >=0.9
+    - einops
+    - nibabel
     - napari >=0.4.14
-    # - nibabel
     - numpy
-    # - opencv >=4.5.5
-    # - pillow
-    # - pims
-    - python >=3.8
+    - pyclesperanto
     - pytorch >=1.11
-    - qtpy >=2.4
-    - pyclesperanto-prototype
+    - qtpy
     - scikit-image >=0.19.2
-    - tifffile >=2022.2.9
+    - tifffile
     - tqdm
-    # - vispy >=0.9.6
 
 test:
   imports:
     - napari_cellseg3d
-    # - napari_cellseg3d.res
-    # - napari_cellseg3d.plugins
-    # - napari_cellseg3d.utils
-    # - napari_cellseg3d.interface
-    # - napari_cellseg3d.code_plugins.plugin_base
-    # - napari_cellseg3d.code_plugins.plugin_convert
-    # - napari_cellseg3d.code_plugins.plugin_crop
-    # - napari_cellseg3d.code_plugins.plugin_helper
-    # - napari_cellseg3d.code_plugins.plugin_metrics
-    # - napari_cellseg3d.code_plugins.plugin_model_inference
-    # - napari_cellseg3d.code_plugins.plugin_model_training
-    # - napari_cellseg3d.code_plugins.plugin_review
-    # - napari_cellseg3d.code_plugins.plugin_review_dock
-    # - napari_cellseg3d.code_plugins.plugin_utilities
-    # - napari_cellseg3d.code_models.models
-    # - napari_cellseg3d.code_models.model_framework
-    # - napari_cellseg3d.code_models.model_instance_seg
-    # - napari_cellseg3d.code_models.model_workers
+
   commands:
-    - pip list
-    - pip check || true  # itk is indeed installed
+    - python -m npe2 validate napari-cellseg3d
+    - python -m pip check
+
   requires:
+    - python {{ python_min }}
     - pip
+    - npe2
 
 about:
-  home: https://github.com/AdaptiveMotorControlLab/CellSeg3d
-  summary: plugin for cell segmentation
+  home: https://github.com/AdaptiveMotorControlLab/CellSeg3D
+  summary: Plugin for cell segmentation in 3D
   license: MIT
   license_file: LICENSE
 
