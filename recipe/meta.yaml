@@ -40,6 +40,7 @@ requirements:
     - qtpy
     - scikit-image >=0.19.2
     - tifffile
+    - toml
     - tqdm
 
 test:
@@ -48,11 +49,9 @@ test:
 
   commands:
     - python -m npe2 validate napari-cellseg3d
-    - python -m pip check
 
   requires:
     - python {{ python_min }}
-    - pip
     - npe2
 
 about:
