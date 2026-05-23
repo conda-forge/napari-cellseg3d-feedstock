@@ -6,20 +6,20 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
   sha256: 7b14ebb3c04d2d256a3bef5080c0329163af9d5c85e07b2c76f921a25c6c5086
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
   script_env:
     - QT_QPA_PLATFORM=offscreen
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
   run:
     # - dask-image >=0.6.0
     - einops
@@ -34,7 +34,7 @@ requirements:
     # - opencv >=4.5.5
     # - pillow
     # - pims
-    - python >=3.8
+    - python >={{ python_min }}
     - pytorch >=1.11
     - qtpy >=2.4
     - pyclesperanto-prototype
@@ -69,6 +69,7 @@ test:
     - pip check || true  # itk is indeed installed
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/AdaptiveMotorControlLab/CellSeg3d
